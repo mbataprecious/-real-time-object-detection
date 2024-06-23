@@ -1,16 +1,10 @@
 "use client";
-import {
-  initiateMic,
-  initiateWebCam,
-  testInternetSpeed,
-} from "@/utils/sys_utils";
 import { VIDEO_SIZE, checksData } from "@/utils/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import SvgIconStyle from "./SvgIconStyle";
 import Loader from "./Loader";
 import {
   drawResults,
-  getDetector,
   getObjectDetector,
 } from "@/utils/midia-pipe-detect";
 import { FaceDetector } from "@mediapipe/tasks-vision";
@@ -205,21 +199,6 @@ const ObjectDetectionSection = () => {
 }
 
   console.log(systemData);
-
-//   const checkFinished = () =>
-//     systemData.webCam.finished &&
-//     systemData.mic.finished &&
-//     systemData.light.finished &&
-//     systemData.internet.finished;
-
-//   const checkAllSuccess = () => {
-//     return (
-//       systemData.webCam.status === "success" &&
-//       systemData.mic.status === "success" &&
-//       systemData.light.status === "success" &&
-//       systemData.internet.status === "success"
-//     );
-//   };
 
   return (
     <>
